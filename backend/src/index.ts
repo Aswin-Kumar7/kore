@@ -60,6 +60,22 @@ app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:3000'], crede
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Root endpoint
+app.get('/', (req, res) => {
+	res.json({ 
+		success: true, 
+		message: 'KORE Food Ordering System API', 
+		version: '1.1.0',
+		endpoints: {
+			health: '/health',
+			auth: '/api/auth',
+			menu: '/api/menu',
+			orders: '/api/orders'
+		},
+		timestamp: new Date().toISOString() 
+	});
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
 	res.json({ success: true, message: 'Food Ordering System API is running', timestamp: new Date().toISOString() });
