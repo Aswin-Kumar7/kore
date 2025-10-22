@@ -59,7 +59,8 @@ const corsOptions = {
     const allowedOrigins = [
       'https://kore-three.vercel.app',
       'https://kore-vercel.vercel.app',
-      'https://kore-mbrzpu0cg-aswin-kumar7s-projects.vercel.app'
+      'https://kore-mbrzpu0cg-aswin-kumar7s-projects.vercel.app',
+      'https://kore-v1.vercel.app'
     ];
     
     // Allow requests with no origin (like mobile apps or curl requests)
@@ -68,12 +69,13 @@ const corsOptions = {
     if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
       callback(null, true);
     } else {
+      console.log('CORS blocked origin:', origin);
       callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
   exposedHeaders: ['Content-Range', 'X-Content-Range'],
   maxAge: 86400 // 24 hours
 };
