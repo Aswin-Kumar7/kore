@@ -112,7 +112,7 @@ export async function requestOtp(req: Request, res: Response): Promise<void> {
 						<p style="font-size: 14px; color: #777; margin-top: 20px;">
 						  For your security, never share this code with anyone.
 						</p>
-						<a href="http://localhost:5173/login" 
+						<a href="https://kore-three.vercel.app/login" 
 						   style="display: inline-block; margin-top: 28px; padding: 14px 28px; 
 						   background:rgb(255, 145, 0); color: #fff; text-decoration: none; border-radius: 8px; 
 						   font-size: 15px; font-weight: 600; transition: background 0.3s ease;">

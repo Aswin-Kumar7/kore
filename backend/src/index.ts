@@ -54,7 +54,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS configuration
-app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:3000'], credentials: true }));
+app.use(cors({ origin: ['https://kore-three.vercel.app/', 'https://kore-vercel.vercel.app/'], credentials: true }));
 
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
@@ -98,10 +98,10 @@ if (process.env.NODE_ENV !== 'production') {
 	ensureAdminUser().then(() => {
 		app.listen(PORT, () => {
 			console.log(`🚀 Server is running on port ${PORT}`);
-			console.log(`📖 API Documentation: http://localhost:${PORT}/health`);
-			console.log(`🍽️  Menu API: http://localhost:${PORT}/api/menu`);
-			console.log(`🔐  Auth API: http://localhost:${PORT}/api/auth`);
-			console.log(`📋 Orders API: http://localhost:${PORT}/api/order`);
+			console.log(`📖 API Documentation: https://kore-vercel.vercel.app/health`);
+			console.log(`🍽️  Menu API: https://kore-vercel.vercel.app/api/menu`);
+			console.log(`🔐  Auth API: https://kore-vercel.vercel.app/api/auth`);
+			console.log(`📋 Orders API: https://kore-vercel.vercel.app/api/order`);
 		});
 	});
 }

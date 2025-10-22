@@ -191,7 +191,7 @@ router.post('/', async (req: AuthenticatedRequest, res: Response<ApiResponse<Leg
 						  </tbody>
 						</table>
 						<div style="text-align:center; margin-top:30px;">
-						  <a href="http://localhost:5173/orders/" style="display:inline-block; padding:14px 28px; background:rgb(255, 145, 0); color:#fff; text-decoration:none; border-radius:8px; font-size:15px; font-weight:600; transition: background 0.3s ease;">Track Your Order</a>
+						  <a href="https://kore-three.vercel.app/orders/" style="display:inline-block; padding:14px 28px; background:rgb(255, 145, 0); color:#fff; text-decoration:none; border-radius:8px; font-size:15px; font-weight:600; transition: background 0.3s ease;">Track Your Order</a>
 						</div>
 					  </td>
 					</tr>
