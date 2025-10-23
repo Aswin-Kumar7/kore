@@ -3,6 +3,8 @@
 A **full-stack food ordering application** built using **TypeScript, Node.js, Express, React, and MongoDB**.  
 Designed with a **modern UI**, secure **JWT Authentication with Email OTP**, and smooth **admin and user flows**.
 
+🔗 **Live Site:** [https://kore-v1.vercel.app/](https://kore-v1.vercel.app/)
+
 ---
 
 ## 🚀 Tech Stack
