@@ -57,8 +57,7 @@ app.use(limiter);
 const corsOptions = {
   origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
     const allowedOrigins = [
-      'https://kore-three.vercel.app',
-      'https://kore-vercel.vercel.app',
+      'https://api-kore.vercel.app',
       'https://kore-mbrzpu0cg-aswin-kumar7s-projects.vercel.app',
       'https://kore-v1.vercel.app'
     ];
@@ -128,10 +127,10 @@ if (process.env.NODE_ENV !== 'production') {
 	ensureAdminUser().then(() => {
 		app.listen(PORT, () => {
 			console.log(`🚀 Server is running on port ${PORT}`);
-			console.log(`📖 API Documentation: https://kore-vercel.vercel.app/health`);
-			console.log(`🍽️  Menu API: https://kore-vercel.vercel.app/api/menu`);
-			console.log(`🔐  Auth API: https://kore-vercel.vercel.app/api/auth`);
-			console.log(`📋 Orders API: https://kore-vercel.vercel.app/api/order`);
+			console.log(`📖 API Documentation: https://api-kore.vercel.app/health`);
+			console.log(`🍽️  Menu API: https://api-kore.vercel.app/api/menu`);
+			console.log(`🔐  Auth API: https://api-kore.vercel.app/api/auth`);
+			console.log(`📋 Orders API: https://api-kore.vercel.app/api/order`);
 		});
 	});
 }

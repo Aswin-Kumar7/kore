@@ -19,7 +19,7 @@ export const updateOrderStatus = async (id: string, status: string): Promise<Ord
 import axios from 'axios';
 import { MenuItem, Order, CreateOrderRequest, ApiResponse } from '../types';
 
-const API_BASE_URL = 'https://kore-vercel.vercel.app/api';
+const API_BASE_URL = 'https://api-kore.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
