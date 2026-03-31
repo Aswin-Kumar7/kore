@@ -1,17 +1,20 @@
-// Ensure admin user exists on server start
 import User from './models/User';
 async function ensureAdminUser() {
-	const adminEmail = 'admin@kore.com';
-	const adminPassword = 'REDACTED_ADMIN_PASS';
-	const adminUsername = 'admin';
+	const adminEmail = process.env.ADMIN_EMAIL;
+	const adminPassword = process.env.ADMIN_PASSWORD;
+	const adminUsername = process.env.ADMIN_USERNAME || 'admin';
+	if (!adminEmail || !adminPassword) {
+		console.warn('⚠️  ADMIN_EMAIL / ADMIN_PASSWORD not set — skipping admin seed.');
+		return;
+	}
 	let existing = await User.findOne({ email: adminEmail });
 	if (!existing) {
 		await User.create({ username: adminUsername, email: adminEmail, password: adminPassword, name: 'Admin' });
-		console.log('Admin user created:', adminEmail);
+		console.log('✅ Admin user created:', adminEmail);
 	} else {
 		existing.password = adminPassword;
 		await existing.save();
-		console.log('Admin user password reset:', adminEmail);
+		console.log('✅ Admin password synced:', adminEmail);
 	}
 }
 
@@ -127,13 +130,10 @@ if (process.env.NODE_ENV !== 'production') {
 	ensureAdminUser().then(() => {
 		app.listen(PORT, () => {
 			console.log(`🚀 Server is running on port ${PORT}`);
-			console.log(`📖 API Documentation: https://api-kore.vercel.app/health`);
-			console.log(`🍽️  Menu API: https://api-kore.vercel.app/api/menu`);
-			console.log(`🔐  Auth API: https://api-kore.vercel.app/api/auth`);
-			console.log(`📋 Orders API: https://api-kore.vercel.app/api/order`);
 		});
 	});
 }
+
 
 // For Vercel deployment
 export default app;
