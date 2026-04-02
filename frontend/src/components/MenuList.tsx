@@ -60,17 +60,17 @@ const MenuList: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-screen flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center"
+          className="surface-card max-w-md px-8 py-10 text-center"
         >
           <div className="relative">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-orange-500 mx-auto mb-4"></div>
             <div className="absolute inset-0 rounded-full border-2 border-orange-200 animate-pulse"></div>
           </div>
-          <p className="text-gray-600 text-lg font-medium">Loading delicious menu items...</p>
+          <p className="text-slate-600 text-lg font-medium">Loading delicious menu items...</p>
         </motion.div>
       </div>
     );
@@ -78,20 +78,20 @@ const MenuList: React.FC = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-screen flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-md mx-auto px-4"
+          className="surface-card max-w-md px-8 py-10 text-center"
         >
           <div className="h-24 w-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <FaUtensils className="h-12 w-12 text-red-500" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-800 mb-2">Oops! Something went wrong</h3>
-          <p className="text-gray-600 mb-6">{error}</p>
+          <h3 className="text-xl font-semibold text-slate-800 mb-2">Oops! Something went wrong</h3>
+          <p className="text-slate-600 mb-6">{error}</p>
           <button 
             onClick={() => window.location.reload()} 
-            className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium py-3 px-6 rounded-lg hover:from-orange-600 hover:to-rose-600 transition-all"
+            className="btn-primary"
           >
             Try Again
           </button>
@@ -101,23 +101,23 @@ const MenuList: React.FC = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+    <div className="page-container">
       {/* Hero Header */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="text-center mb-12"
+        className="mb-10 text-center"
       >
-        <div className="inline-flex items-center gap-3 mb-4">
-          <div className="h-12 w-12 bg-gradient-to-br from-orange-400 to-rose-500 rounded-xl flex items-center justify-center">
-            <FaUtensils className="h-6 w-6 text-white" />
+        <div className="chip mb-4 px-4 py-2.5">
+          <div className="icon-slab h-10 w-10 rounded-xl">
+            <FaUtensils className="h-5 w-5 text-white" />
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-800">
+          <h1 className="section-heading text-left">
             Our Menu
           </h1>
         </div>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="section-subtitle mx-auto max-w-2xl">
           Discover our carefully curated selection of delicious dishes, prepared with the finest ingredients and crafted with passion
         </p>
       </motion.div>
@@ -136,7 +136,7 @@ const MenuList: React.FC = () => {
             placeholder="Search for dishes..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all bg-white/80 backdrop-blur-sm"
+            className="soft-input pl-12"
           />
         </div>
       </motion.div>
@@ -148,24 +148,24 @@ const MenuList: React.FC = () => {
         transition={{ delay: 0.4 }}
         className="mb-8"
       >
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-gray-100">
+        <div className="surface-card p-6">
           <div className="flex items-center gap-3 mb-4">
             <FaFilter className="h-5 w-5 text-orange-600" />
-            <h3 className="text-lg font-semibold text-gray-800">Filter Options</h3>
+            <h3 className="text-lg font-semibold text-slate-800">Filter Options</h3>
           </div>
           
           {/* Category Filters */}
           <div className="mb-6">
-            <h4 className="text-sm font-medium text-gray-700 mb-3">Categories</h4>
+            <h4 className="text-sm font-medium text-slate-700 mb-3">Categories</h4>
             <div className="flex flex-wrap gap-3">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory('')}
-                className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-all duration-200 ${
+                className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
                   selectedCategory === ''
                     ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white border-transparent shadow-lg'
-                    : 'bg-white text-gray-700 border-orange-200 hover:border-orange-300 hover:bg-orange-50'
+                    : 'bg-white/90 text-slate-700 border-orange-200 hover:border-orange-300 hover:bg-orange-50'
                 }`}
               >
                 All Items
@@ -176,10 +176,10 @@ const MenuList: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-orange-500 to-rose-500 text-white border-transparent shadow-lg'
-                      : 'bg-white text-gray-700 border-orange-200 hover:border-orange-300 hover:bg-orange-50'
+                      : 'bg-white/90 text-slate-700 border-orange-200 hover:border-orange-300 hover:bg-orange-50'
                   }`}
                 >
                   {category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
@@ -214,13 +214,13 @@ const MenuList: React.FC = () => {
                   )}
                 </div>
               </div>
-              <span className="text-sm font-medium text-gray-700 group-hover:text-green-600 transition-colors">
+              <span className="text-sm font-medium text-slate-700 group-hover:text-green-600 transition-colors">
                 Vegetarian Only
               </span>
             </label>
 
             {/* Results Count */}
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-slate-500">
               {filteredItems.length} item{filteredItems.length !== 1 ? 's' : ''} found
             </div>
           </div>
@@ -238,8 +238,8 @@ const MenuList: React.FC = () => {
           <div className="h-32 w-32 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <FaSearch className="h-16 w-16 text-gray-400" />
           </div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-2">No Items Found</h3>
-          <p className="text-gray-600 mb-6 max-w-md mx-auto">
+          <h3 className="text-2xl font-semibold text-slate-800 mb-2">No Items Found</h3>
+          <p className="text-slate-600 mb-6 max-w-md mx-auto">
             {searchQuery 
               ? `No dishes match "${searchQuery}". Try adjusting your search or filters.`
               : 'No items match your current filters. Try selecting different options.'
@@ -251,7 +251,7 @@ const MenuList: React.FC = () => {
               setSelectedCategory('');
               setShowVegetarianOnly(false);
             }}
-            className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium py-3 px-6 rounded-lg hover:from-orange-600 hover:to-rose-600 transition-all"
+            className="btn-primary"
           >
             Clear Filters
           </button>

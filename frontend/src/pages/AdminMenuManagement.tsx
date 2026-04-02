@@ -11,10 +11,10 @@ const AdminMenuManagement: React.FC = () => {
   if (!user || user.email !== 'admin@kore.com') return null;
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
+    <div className="min-h-screen">
       <Navbar onCartClick={() => {}} />
       
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

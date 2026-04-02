@@ -57,7 +57,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
   return (
     <motion.div 
       whileHover={{ scale: 1.02, y: -5 }} 
-      className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-2xl group"
+      className="surface-card overflow-hidden transition-all duration-300 hover:shadow-2xl group"
     >
       {/* Image Section */}
       <div className="relative overflow-hidden">
@@ -121,10 +121,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
       <div className="p-6">
         {/* Title and Description */}
         <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-600 transition-colors duration-200">
+          <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-orange-600 transition-colors duration-200">
             {item.name}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+          <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
             {item.description}
           </p>
         </div>
@@ -174,7 +174,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }} 
                 onClick={handleAddToCart} 
-                className="bg-gradient-to-r from-orange-500 to-rose-500 text-white font-semibold py-3 px-6 rounded-xl hover:from-orange-600 hover:to-rose-600 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
+                className="btn-primary"
               >
                 <FaPlus className="h-4 w-4" />
                 Add to Cart
@@ -190,7 +190,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item }) => {
             </div>
             <div className="flex items-center gap-1">
               <FaStar className="h-3 w-3 text-yellow-400" />
-              <span className="text-xs text-gray-600">4.8</span>
+              <span className="text-xs text-slate-600">4.8</span>
             </div>
           </div>
         </div>

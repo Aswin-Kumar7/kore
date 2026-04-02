@@ -61,18 +61,18 @@ const Profile: React.FC = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center"
+          className="surface-card px-8 py-10 text-center"
         >
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading profile...</p>
+          <p className="text-slate-600">Loading profile...</p>
         </motion.div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
-      <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="page-shell">
+      <div className="max-w-4xl mx-auto px-4 py-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -81,15 +81,15 @@ const Profile: React.FC = () => {
         >
           <button 
             onClick={() => navigate('/menu')} 
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-orange-600 transition-colors mb-4 group"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-orange-600 transition-colors mb-4 group"
           >
             <FaArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             <span className="font-medium">Back to Menu</span>
           </button>
           
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-800 mb-2">Profile Settings</h1>
-            <p className="text-gray-600">Manage your account information and preferences</p>
+            <h1 className="section-heading mb-2">Profile Settings</h1>
+            <p className="section-subtitle mt-0">Manage your account information and preferences</p>
           </div>
         </motion.div>
 
@@ -101,7 +101,7 @@ const Profile: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="md:col-span-2"
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="surface-card overflow-hidden">
               {/* Card Header */}
               <div className="bg-gradient-to-r from-orange-500 to-rose-500 px-6 py-4">
                 <div className="flex items-center gap-3">
@@ -119,7 +119,7 @@ const Profile: React.FC = () => {
               <div className="p-6 space-y-6">
                 {/* Username Field */}
                 <div className="space-y-2">
-                  <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
                     <FaUserTag className="h-4 w-4 text-orange-500" />
                     Username
                   </label>
@@ -127,19 +127,19 @@ const Profile: React.FC = () => {
                     <input 
                       value={username} 
                       disabled 
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-500 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all" 
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-500 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all" 
                       placeholder="Username"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2">
                       <FaShieldAlt className="h-4 w-4 text-gray-400" />
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500">Username cannot be changed</p>
+                  <p className="text-xs text-slate-500">Username cannot be changed</p>
                 </div>
 
                 {/* Email Field */}
                 <div className="space-y-2">
-                  <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                    <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
                     <FaEnvelope className="h-4 w-4 text-orange-500" />
                     Email Address
                   </label>
@@ -147,40 +147,40 @@ const Profile: React.FC = () => {
                     <input 
                       value={email} 
                       disabled 
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-500 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all" 
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-500 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all" 
                       placeholder="Email address"
                     />
                     <div className="absolute right-3 top-1/2 -translate-y-1/2">
                       <FaShieldAlt className="h-4 w-4 text-gray-400" />
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500">Email cannot be changed</p>
+                  <p className="text-xs text-slate-500">Email cannot be changed</p>
                 </div>
 
                 {/* Name Field */}
                 <div className="space-y-2">
-                  <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
                     <FaUser className="h-4 w-4 text-orange-500" />
                     Full Name
                   </label>
                   <input 
                     value={name} 
                     onChange={(e) => setName(e.target.value)} 
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" 
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" 
                     placeholder="Enter your full name"
                   />
                 </div>
 
                 {/* Phone Field */}
                 <div className="space-y-2">
-                  <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
                     <FaPhone className="h-4 w-4 text-orange-500" />
                     Phone Number
                   </label>
                   <input 
                     value={phone} 
                     onChange={(e) => setPhone(e.target.value)} 
-                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" 
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all" 
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -190,7 +190,7 @@ const Profile: React.FC = () => {
                   <motion.button 
                     onClick={onSave} 
                     disabled={saving}
-                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-rose-500 text-white font-medium py-3 px-6 rounded-lg hover:from-orange-600 hover:to-rose-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -210,18 +210,18 @@ const Profile: React.FC = () => {
             className="space-y-6"
           >
             {/* Account Status */}
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Account Status</h3>
+            <div className="surface-card p-6">
+              <h3 className="text-lg font-semibold text-slate-800 mb-4">Account Status</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Account Type</span>
+                  <span className="text-sm text-slate-600">Account Type</span>
                   <span className="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">
                     Active
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Member Since</span>
-                  <span className="text-sm font-medium text-gray-800">
+                  <span className="text-sm text-slate-600">Member Since</span>
+                  <span className="text-sm font-medium text-slate-800">
                     {new Date().toLocaleDateString()}
                   </span>
                 </div>
@@ -229,14 +229,14 @@ const Profile: React.FC = () => {
             </div>
 
             {/* Danger Zone */}
-            <div className="bg-white rounded-2xl shadow-xl border border-red-100 p-6">
+            <div className="surface-card border-red-100 p-6">
               <h3 className="text-lg font-semibold text-red-800 mb-4">Danger Zone</h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-slate-600 mb-4">
                 Once you delete your account, there is no going back. Please be certain.
               </p>
               <motion.button
                 onClick={onDelete}
-                className="w-full flex items-center justify-center gap-2 bg-red-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all"
+                className="w-full flex items-center justify-center gap-2 rounded-2xl bg-red-500 px-4 py-3 font-medium text-white transition-all hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

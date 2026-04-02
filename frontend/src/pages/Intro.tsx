@@ -6,7 +6,7 @@ const Intro: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50 flex items-center justify-center relative overflow-hidden">
+    <div className="page-shell flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-orange-50">
       
       {/* Animated Background Circles */}
       <motion.div
@@ -45,16 +45,17 @@ const Intro: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 text-center p-12 rounded-3xl backdrop-blur-sm bg-white/80 shadow-2xl border border-orange-100/50 max-w-lg"
-        style={{
-          boxShadow: '0 25px 50px -12px rgba(251, 146, 60, 0.15), 0 0 0 1px rgba(251, 146, 60, 0.05)'
-        }}
+        className="hero-panel relative z-10 max-w-2xl px-8 py-12 text-center sm:px-12"
       >
+        <div className="chip mb-6 inline-flex">
+          <span className="h-2 w-2 rounded-full bg-orange-500" />
+          Premium ordering, simplified
+        </div>
         <motion.h1
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', stiffness: 100 }}
-          className="text-6xl font-extrabold tracking-tight text-gray-800 drop-shadow-sm"
+          className="text-6xl font-extrabold tracking-tight text-slate-800 drop-shadow-sm"
           style={{
             background: 'linear-gradient(135deg, #1f2937 0%, #ea580c 100%)',
             WebkitBackgroundClip: 'text',
@@ -69,13 +70,16 @@ const Intro: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="mt-6 text-gray-600 text-lg leading-relaxed"
+          className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
         >
-          Experience food ordering like never before —  
-          <span className="font-semibold text-orange-600"> fast</span>,  
-          <span className="font-semibold text-orange-500"> stylish</span>, and  
-          <span className="font-semibold text-orange-700"> simple</span>.
+          Experience food ordering like never before with a cleaner, faster, and more polished interface.
         </motion.p>
+
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <span className="chip">Fast checkout</span>
+          <span className="chip">Beautiful menus</span>
+          <span className="chip">Order tracking</span>
+        </div>
 
         <motion.button
           whileHover={{ 
@@ -84,9 +88,8 @@ const Intro: React.FC = () => {
           }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate('/login')}
-          className="mt-8 inline-flex items-center justify-center px-10 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold shadow-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 border border-orange-400/20"
+          className="btn-primary mt-10 px-10 py-4"
         >
-          <span className="mr-2"></span>
           Get Started
         </motion.button>
 
@@ -94,12 +97,12 @@ const Intro: React.FC = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 opacity-60"
+          className="absolute -top-6 -right-6 h-12 w-12 rounded-full bg-gradient-to-br from-orange-200 to-orange-300 opacity-60"
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-gradient-to-br from-orange-300 to-orange-400 opacity-50"
+          className="absolute -bottom-4 -left-4 h-8 w-8 rounded-full bg-gradient-to-br from-orange-300 to-orange-400 opacity-50"
         />
       </motion.div>
 

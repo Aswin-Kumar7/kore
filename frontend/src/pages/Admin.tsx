@@ -89,10 +89,10 @@ const Admin: React.FC = () => {
   const totalRevenue = orders.reduce((sum, o) => sum + o.total, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
+    <div className="min-h-screen">
       <Navbar onCartClick={() => {}} />
       
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -129,7 +129,7 @@ const Admin: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8"
         >
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="bg-white/90 rounded-2xl p-6 shadow-lg border border-white/80 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center">
                 <FaClipboardList className="h-5 w-5 text-blue-600" />
@@ -141,7 +141,7 @@ const Admin: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="bg-white/90 rounded-2xl p-6 shadow-lg border border-white/80 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-yellow-100 rounded-lg flex items-center justify-center">
                 <FaClock className="h-5 w-5 text-yellow-600" />
@@ -153,7 +153,7 @@ const Admin: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="bg-white/90 rounded-2xl p-6 shadow-lg border border-white/80 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-orange-100 rounded-lg flex items-center justify-center">
                 <FaUtensils className="h-5 w-5 text-orange-600" />
@@ -165,7 +165,7 @@ const Admin: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="bg-white/90 rounded-2xl p-6 shadow-lg border border-white/80 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center">
                 <FaCheckCircle className="h-5 w-5 text-green-600" />
@@ -177,7 +177,7 @@ const Admin: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+          <div className="bg-white/90 rounded-2xl p-6 shadow-lg border border-white/80 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 bg-purple-100 rounded-lg flex items-center justify-center">
                 <FaDollarSign className="h-5 w-5 text-purple-600" />
@@ -227,7 +227,7 @@ const Admin: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white/92 rounded-2xl shadow-lg border border-white/80 overflow-hidden hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
               >
                 {/* Order Header */}
                 <div className="bg-gradient-to-r from-gray-50 to-orange-50 px-6 py-4 border-b border-gray-100">
